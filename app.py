@@ -8,20 +8,20 @@ st.set_page_config(
 )
 
 # Buat layout dengan kolom: 2/3 untuk judul, 1/3 untuk logo
-col1, col2 = st.columns([2, 1])
+col1, col2 = st.columns([0.5, 2])
 
-with col1:
+with col2:
     st.markdown(
         "<h1 style='text-align: center; color: navy;'>🎓 Graduation Day 🎓</h1>",
         unsafe_allow_html=True,
     )
-    st.markdown(
-        "<h2 style='text-align: center; color: darkblue;'>Leadership Development Program & Supervisor Development Program</h2>",
+
+with col1:
+    st.image("Print Gimmick Lulus.png", width=120)  # Sesuaikan ukuran biar pas
+    
+st.markdown("<h2 style='text-align: center; color: darkblue;'>Leadership Development Program & Supervisor Development Program</h2>",
         unsafe_allow_html=True,
     )
-
-with col2:
-    st.image("Print Gimmick Lulus.png", width=120)  # Sesuaikan ukuran biar pas
 
 # Load data
 @st.cache_data
