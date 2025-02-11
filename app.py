@@ -7,7 +7,7 @@ st.set_page_config(
     page_icon="🎓",
 )
 
-#col1, col2, col3 = st.columns([1, 3, 1])
+col1, col2, col3 = st.columns([1, 3, 1])
 
 with col2:  # Kolom tengah untuk judul agar berada di tengah halaman
     st.markdown(
