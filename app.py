@@ -7,25 +7,21 @@ st.set_page_config(
     page_icon="🎓",
 )
 
-# Menampilkan logo di tengah atas dengan markdown untuk memastikan alignment tengah
-st.markdown(
-    """
-    <div style="display: flex; justify-content: center;">
-        <img src="Print Gimmick Lulus.png" width="150">
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+# Buat layout dengan kolom: 2/3 untuk judul, 1/3 untuk logo
+col1, col2 = st.columns([2, 1])
 
-# Judul halaman
-st.markdown(
-    "<h1 style='text-align: center; color: navy;'>🎓 Graduation Day 🎓</h1>",
-    unsafe_allow_html=True,
-)
-st.markdown(
-    "<h2 style='text-align: center; color: darkblue;'>Leadership Development Program & Supervisor Development Program</h2>",
-    unsafe_allow_html=True,
-)
+with col1:
+    st.markdown(
+        "<h1 style='text-align: center; color: navy;'>🎓 Graduation Day 🎓</h1>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<h2 style='text-align: center; color: darkblue;'>Leadership Development Program & Supervisor Development Program</h2>",
+        unsafe_allow_html=True,
+    )
+
+with col2:
+    st.image("Print Gimmick Lulus.png", width=120)  # Sesuaikan ukuran biar pas
 
 # Load data
 @st.cache_data
