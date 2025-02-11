@@ -40,6 +40,7 @@ def load_data():
     return pd.read_csv("Data Graduation Feb 2025.csv", encoding="ISO-8859-1")
 
 data = load_data()
+print(data.columns)
 
 # Cek apakah NIK ada di data
 if nik_input:
