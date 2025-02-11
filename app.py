@@ -7,12 +7,9 @@ st.set_page_config(
     page_icon='🎓'  
 )
 
-# Menampilkan logo di tengah atas
-st.image("image.png", width=150)
-
 # Menampilkan judul dan subjudul di tengah
 st.markdown(
-    "<h1 style='text-align: center; color: navy;'>🎓 Graduation Day </h1>",
+    "<h1 style='text-align: center; color: navy;'>🎓 Graduation Day 🎓</h1>",
     unsafe_allow_html=True,
 )
 st.markdown(
