@@ -7,6 +7,9 @@ st.set_page_config(
     page_icon="🎓",
 )
 
+# Menampilkan logo di tengah atas
+st.image("Print Gimmick Lulus.png", width=150)
+
 # Judul halaman
 st.markdown(
     "<h1 style='text-align: center; color: navy;'>🎓 Graduation Day 🎓</h1>",
