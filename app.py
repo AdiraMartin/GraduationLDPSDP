@@ -32,9 +32,7 @@ st.markdown("<h3 style='text-align: center;'>Masukkan Data Anda</h3>", unsafe_al
 
 with st.form("cek_kelulusan", clear_on_submit=False):
     nik_input = st.text_input("Masukkan NIK", key="nik").strip().upper()  # Ubah input NIK ke huruf kapital
-    nama_input = st.text_input("Masukkan Nama", key="nama")
-    
-    # Pilihan program
+    nama_input = st.text_input("Masukkan Nama", key="nama").strip().title()  # Format nama jadi Title Case
     program_options = ["LDP Batch 5", "LDP Batch 6", "SDP Batch 1", "SDP Batch 2"]
     selected_program = st.selectbox("Pilih Program", program_options, key="program")
 
@@ -45,7 +43,8 @@ if submit_button:
     matched_data = data[(data['NIK'] == nik_input) & (data['Program'] == selected_program)]
 
     if not matched_data.empty:
-        st.markdown("<h3 style='text-align: center; color: green;'>Selamat! Anda lulus 🎉</h3>", unsafe_allow_html=True)
+        nama_display = nama_input if nama_input else "Anda"  # Kalau nama kosong, tetap tampil "Anda"
+        st.markdown(f"<h3 style='text-align: center; color: green;'>Selamat, {nama_display}! Anda lulus 🎉</h3>", unsafe_allow_html=True)
         
         # Tampilkan gambar berdasarkan program
         if "SDP" in selected_program:
