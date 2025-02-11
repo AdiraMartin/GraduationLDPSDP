@@ -7,8 +7,15 @@ st.set_page_config(
     page_icon="🎓",
 )
 
-# Menampilkan logo di tengah atas
-st.image("Print Gimmick Lulus.png", width=150)
+# Menampilkan logo di tengah atas dengan markdown untuk memastikan alignment tengah
+st.markdown(
+    """
+    <div style="display: flex; justify-content: center;">
+        <img src="Print Gimmick Lulus.png" width="150">
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Judul halaman
 st.markdown(
