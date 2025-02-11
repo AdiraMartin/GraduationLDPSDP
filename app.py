@@ -40,16 +40,4 @@ def load_data():
     return pd.read_csv("Data Graduation Feb 2025.csv", encoding="ISO-8859-1")
 
 data = load_data()
-print(data.columns)
-
-# Cek apakah NIK ada di data
-if nik_input:
-    matched_data = data[(data['NIK'] == nik_input) & (data['Program'] == selected_program)]
-    
-    if not matched_data.empty:
-        if "SDP Batch 1" in selected_program or "SDP Batch 2" in selected_program:
-            st.image("3.png", caption="Selamat! Anda lulus dari SDP", use_column_width=True)
-        elif "LDP Batch 5" in selected_program or "LDP Batch 6" in selected_program:
-            st.image("4.png", caption="Selamat! Anda lulus dari LDP", use_column_width=True)
-    else:
-        st.warning("NIK tidak ditemukan dalam program yang dipilih.")
+data
