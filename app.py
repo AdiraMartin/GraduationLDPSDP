@@ -59,9 +59,9 @@ if submit_button:
 
         # Tampilkan gambar berdasarkan program
         if "SDP" in selected_program:
-            st.image("4.png", caption="Supervisor Development Program", use_column_width=True)
+            st.image("4.png", caption="Supervisor Development Program", use_container_width=True=True)
         elif "LDP" in selected_program:
-            st.image("3.png", caption="Leadership Development Program", use_column_width=True)
+            st.image("3.png", caption="Leadership Development Program", use_container_width=True=True)
     else:
         st.markdown("<h3 style='text-align: center; color: red;'>Maaf, data tidak ditemukan 😞</h3>", unsafe_allow_html=True)
         st.warning("Pastikan NIK dan Program yang Anda masukkan sudah benar.")
