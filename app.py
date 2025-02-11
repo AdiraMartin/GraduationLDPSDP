@@ -40,12 +40,18 @@ with st.form("cek_kelulusan", clear_on_submit=False):
     submit_button = st.form_submit_button("Cek Kelulusan")
 
 if submit_button:
-    matched_data = data[(data['NIK'] == nik_input) & (data['Program'] == selected_program)]
+    # Pengecualian untuk NIK HOAC21005
+    if nik_input == "HOAC21005":
+        selected_program = "LDP Batch 6"  # Override programnya
+        lulus = True
+    else:
+        matched_data = data[(data['NIK'] == nik_input) & (data['Program'] == selected_program)]
+        lulus = not matched_data.empty
 
-    if not matched_data.empty:
-        nama_display = nama_input if nama_input else "Anda"  # Kalau nama kosong, tetap tampil "Anda"
+    if lulus:
+        nama_display = nama_input if nama_input else "Anda"
         st.markdown(f"<h3 style='text-align: center; color: green;'>Selamat, {nama_display}! Anda lulus 🎉</h3>", unsafe_allow_html=True)
-        
+
         # Tampilkan gambar berdasarkan program
         if "SDP" in selected_program:
             st.image("4.png", caption="Supervisor Development Program", use_column_width=True)
