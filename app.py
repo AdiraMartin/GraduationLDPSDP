@@ -33,7 +33,7 @@ data = load_data()
 
 # Buat form input di tengah
 st.write("##")
-st.markdown("<h3 style='text-align: center;'>Masukkan Data Kamu</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Masukkan Data</h3>", unsafe_allow_html=True)
 
 with st.form("cek_kelulusan", clear_on_submit=False):
     nik_input = st.text_input("Masukkan NIK", key="nik").strip().upper()  # Ubah input NIK ke huruf kapital
@@ -55,7 +55,7 @@ if submit_button:
 
     if lulus:
         nama_display = nama_input if nama_input else "Kamu"
-        st.markdown(f"<h3 style='text-align: center; color: green;'> Yeaaayyy selamat {nama_display}! kamu lulus 🎉</h3>", unsafe_allow_html=True)
+        st.markdown(f"<h3 style='text-align: center; color: green;'> Yeaaayyy Selamat yaa {nama_display}! kamu lulus 🎉</h3>", unsafe_allow_html=True)
 
         # Tampilkan gambar berdasarkan program
         if "SDP" in selected_program:
