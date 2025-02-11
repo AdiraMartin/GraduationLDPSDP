@@ -33,7 +33,7 @@ data = load_data()
 
 # Buat form input di tengah
 st.write("##")
-st.markdown("<h3 style='text-align: center;'>Masukkan Data Anda</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Masukkan Data Kamu</h3>", unsafe_allow_html=True)
 
 with st.form("cek_kelulusan", clear_on_submit=False):
     nik_input = st.text_input("Masukkan NIK", key="nik").strip().upper()  # Ubah input NIK ke huruf kapital
@@ -54,8 +54,8 @@ if submit_button:
         lulus = not matched_data.empty
 
     if lulus:
-        nama_display = nama_input if nama_input else "Anda"
-        st.markdown(f"<h3 style='text-align: center; color: green;'>Selamat, {nama_display}! Anda lulus 🎉</h3>", unsafe_allow_html=True)
+        nama_display = nama_input if nama_input else "Kamu"
+        st.markdown(f"<h3 style='text-align: center; color: green;'> Yeaaayyy selamat {nama_display}! kamu lulus 🎉</h3>", unsafe_allow_html=True)
 
         # Tampilkan gambar berdasarkan program
         if "SDP" in selected_program:
@@ -64,4 +64,4 @@ if submit_button:
             st.image("3.png", caption="Leadership Development Program", use_container_width=True)
     else:
         st.markdown("<h3 style='text-align: center; color: red;'>Maaf, data tidak ditemukan 😞</h3>", unsafe_allow_html=True)
-        st.warning("Pastikan NIK dan Program yang Anda masukkan sudah benar.")
+        st.warning("Pastikan NIK dan Program yang Kamu masukkan sudah benar.")
