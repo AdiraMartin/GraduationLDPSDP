@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 # Buat layout dengan kolom: 2/3 untuk judul, 1/3 untuk logo
-col1, col2 = st.columns([1, 2])
+col1, col2 = st.columns([2, 2])
 
 with col2:
     st.markdown(
