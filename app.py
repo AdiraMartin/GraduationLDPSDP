@@ -7,17 +7,16 @@ st.set_page_config(
     page_icon="🎓",
 )
 
-# Buat layout dengan kolom: 2/3 untuk judul, 1/3 untuk logo
-col1, col2 = st.columns([1, 2])
+#col1, col2, col3 = st.columns([1, 3, 1])
 
-with col2:
+with col2:  # Kolom tengah untuk judul agar berada di tengah halaman
     st.markdown(
-        "<h1 style='text-align: left; color: navy;'>🎓 Graduation Day 🎓</h1>",
+        "<h1 style='text-align: center; color: navy;'>🎓 Graduation Day 🎓</h1>",
         unsafe_allow_html=True,
     )
 
-with col1:
-    st.image("Print Gimmick Lulus.png", width=120)  # Sesuaikan ukuran biar pas
+with col1:  # Kolom kanan untuk logo
+    st.image("Print Gimmick Lulus.png", width=120)
     
 st.markdown("<h2 style='text-align: center; color: darkblue;'>Leadership Development Program & Supervisor Development Program</h2>",
         unsafe_allow_html=True,
