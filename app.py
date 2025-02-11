@@ -37,7 +37,7 @@ selected_program = st.sidebar.selectbox("Pilih Program", program_options)
 # Load data
 @st.cache_data
 def load_data():
-    return pd.read_excel("Data Graduation Feb 2025.xlsx", engine="openpyxl")
+    return pd.read_excel("Data Graduation Feb 2025.csv")
 
 data = load_data()
 data
