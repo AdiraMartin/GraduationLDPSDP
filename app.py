@@ -20,7 +20,9 @@ st.markdown(
 # Load data
 @st.cache_data
 def load_data():
-    return pd.read_csv("Data Graduation Feb 2025.csv")
+    df = pd.read_csv("Data Graduation Feb 2025.csv")
+    df["NIK"] = df["NIK"].astype(str).str.upper()  # Ubah semua NIK jadi huruf kapital
+    return df
 
 data = load_data()
 
@@ -29,7 +31,7 @@ st.write("##")
 st.markdown("<h3 style='text-align: center;'>Masukkan Data Anda</h3>", unsafe_allow_html=True)
 
 with st.form("cek_kelulusan", clear_on_submit=False):
-    nik_input = st.text_input("Masukkan NIK", key="nik")
+    nik_input = st.text_input("Masukkan NIK", key="nik").strip().upper()  # Ubah input NIK ke huruf kapital
     nama_input = st.text_input("Masukkan Nama", key="nama")
     
     # Pilihan program
