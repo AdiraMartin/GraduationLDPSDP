@@ -43,7 +43,7 @@ data = load_data()
 
 # Cek apakah NIK ada di data
 if nik_input:
-    matched_data = data[(data['NIK'] == nik_input) & (data['program'] == selected_program)]
+    matched_data = data[(data['NIK'] == nik_input) & (data['Program'] == selected_program)]
     
     if not matched_data.empty:
         if "SDP Batch 1" in selected_program or "SDP Batch 2" in selected_program:
